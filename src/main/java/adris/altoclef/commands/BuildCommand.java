@@ -1,10 +1,7 @@
 package adris.altoclef.commands;
 
 import adris.altoclef.AltoClef;
-import adris.altoclef.buildings.Building;
-import adris.altoclef.buildings.Hakenkruis;
-import adris.altoclef.buildings.O;
-import adris.altoclef.buildings.StringToBlock;
+import adris.altoclef.buildings.*;
 import adris.altoclef.commandsystem.*;
 import adris.altoclef.tasks.construction.build2DBuildingTask;
 import net.minecraft.block.Block;
@@ -23,25 +20,36 @@ public class BuildCommand extends Command {
 
     }
 
-    private boolean isValidBuilding(String building) {
-
-        if (Objects.equals(building, "O")) {
-            return true;
-        }
-        if (Objects.equals(building, "hakenkruis")) {
-            return true;
-        }
-
-        return false;
-
-    }
-
     private Building getBuilding(String building, Block blocktype) {
-
         return switch (building) {
-            case "O" -> new O(blocktype);
+            case "a" -> new A(blocktype);
+            case "b" -> new B(blocktype);
+            case "c" -> new C(blocktype);
+            case "d" -> new D(blocktype);
+            case "e" -> new E(blocktype);
+            case "f" -> new F(blocktype);
+            case "g" -> new G(blocktype);
+            case "h" -> new H(blocktype);
+            case "i" -> new I(blocktype);
+            case "j" -> new J(blocktype);
+            case "k" -> new K(blocktype);
+            case "l" -> new L(blocktype);
+            case "m" -> new M(blocktype);
+            case "n" -> new N(blocktype);
+            case "o" -> new O(blocktype);
+            case "p" -> new P(blocktype);
+            case "q" -> new Q(blocktype);
+            case "r" -> new R(blocktype);
+            case "s" -> new S(blocktype);
+            case "t" -> new T(blocktype);
+            case "u" -> new U(blocktype);
+            case "v" -> new V(blocktype);
+            case "w" -> new W(blocktype);
+            case "x" -> new X(blocktype);
+            case "y" -> new Y(blocktype);
+            case "z" -> new Z(blocktype);
             case "hakenkruis" -> new Hakenkruis(blocktype);
-            default -> new O(blocktype);
+            default -> new A(blocktype);
         };
     }
 
@@ -51,8 +59,6 @@ public class BuildCommand extends Command {
         String structure = parser.get(String.class);
         String blockString = parser.get(String.class);
         Block block = StringToBlock.stringToBlock(blockString);
-
-        if (!isValidBuilding(structure)) return;
 
         Building building = getBuilding(structure, block);
 

@@ -1,18 +1,17 @@
 package adris.altoclef.buildings;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 
-public class O extends Building {
+public class A extends Building {
 
-    public O(Block blocktype) {
+    public A(Block blocktype) {
         super(new int[][] {
-                {1, 1, 1},
-                {1, 0, 1},
-                {1, 0, 1},
+                {0, 1, 0},
                 {1, 0, 1},
                 {1, 1, 1},
+                {1, 0, 1},
+                {1, 0, 1},
         }, blocktype);
     }
-
-
 }

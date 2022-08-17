@@ -1,60 +1,27 @@
 package adris.altoclef.buildings;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 
-public class Hakenkruis implements Building{
-
-    private final int blocksNeeded = 37;
-    private final int length = 11;
-    private final int height = 11;
-    private final Block c;
-    private final Block a = Blocks.AIR;
-    private final Block[][] blueprint;
-
+public class Hakenkruis extends Building {
 
 
     public Hakenkruis(Block blocktype) {
-        c = blocktype;
-         blueprint = new Block[][] {
-                {c,a,a,a,a,c,c,c,c,c,c},
-                {c,a,a,a,a,c,a,a,a,a,a},
-                {c,a,a,a,a,c,a,a,a,a,a},
-                {c,a,a,a,a,c,a,a,a,a,a},
-                {c,a,a,a,a,c,a,a,a,a,a},
-                {c,c,c,c,c,c,c,c,c,c,c},
-                {a,a,a,a,a,c,a,a,a,a,c},
-                {a,a,a,a,a,c,a,a,a,a,c},
-                {a,a,a,a,a,c,a,a,a,a,c},
-                {a,a,a,a,a,c,a,a,a,a,c},
-                {c,c,c,c,c,c,a,a,a,a,c},
-        };
+
+        super(new int[][] {
+                {1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1},
+                {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+                {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+                {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+                {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+                {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+                {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+                {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+                {1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1},
+        }, blocktype);
+
     }
 
-    @Override
-    public int getBlocksNeeded() {
-        return this.blocksNeeded;
-    }
 
-    @Override
-    public int getLength() {
-        return this.length;
-    }
-
-    @Override
-    public int getHeight() {
-        return this.height;
-    }
-
-    @Override
-    public Block[][] getBlueprint() {
-        return this.blueprint;
-    }
-
-    @Override
-    public Block getBlocktype() {
-        return this.c;
-    }
 }
